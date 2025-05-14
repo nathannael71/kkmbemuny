@@ -1,8 +1,8 @@
 'use client’
   
-import { useTheme } from ‘next-themes’
-import { useState, useEffect } from ‘react’
-import { cn } from ‘@/lib/utils’
+import { useTheme } from 'next-themes'
+import { useState, useEffect } from 'react'
+import { cn } from '@/lib/utils'
 export function ThemeToggle() {
 const { theme, setTheme } = useTheme()
 const [mounted, setMounted] = useState(false)
@@ -15,10 +15,10 @@ return (
 </div>
 )
 }
-const isDark = theme === ‘dark’
+const isDark = theme === 'dark'
 return (
 <button
-onClick={() => setTheme(isDark ? ‘light’ : ‘dark’)}
+onClick={() => setTheme(isDark ? 'light' : 'dark')}
 className={cn(
 “h-8 w-8 rounded-full flex items-center justify-center transition-colors”,
 “hover:bg-gray-200/70 dark:hover:bg-gray-800/70”
