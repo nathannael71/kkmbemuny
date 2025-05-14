@@ -1,9 +1,11 @@
-// src/app/layout.tsx
-import './globals.css'
-import localFont from 'next/font/local'
+import './global.css'
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
+import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import { Header } from '@/components/layout/Header'
+import { cn } from '@/lib/utils'
 
-// SF Pro Display font
+// Menggunakan font SF Pro lokal dari public/fonts
 const sfPro = localFont({
   src: [
     {
@@ -17,46 +19,17 @@ const sfPro = localFont({
       style: 'normal',
     },
     {
-      path: '../../public/fonts/SF-Pro-Display-Semibold.otf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
       path: '../../public/fonts/SF-Pro-Display-Bold.otf',
       weight: '700',
       style: 'normal',
     },
   ],
   variable: '--font-sf-pro',
-  display: 'swap',
-})
-
-// SF Pro Text font for body text
-const sfProText = localFont({
-  src: [
-    {
-      path: '../../public/fonts/SF-Pro-Text-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/SF-Pro-Text-Medium.otf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/SF-Pro-Text-Semibold.otf',
-      weight: '600',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-sf-pro-text',
-  display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'KKM BEM KM UNY - Next.js',
-  description: 'Departemen Karir dan Karya Mahasiswa',
+  title: 'My Next.js App',
+  description: 'Created with Next.js 15.3.2',
 }
 
 export default function RootLayout({
@@ -65,9 +38,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${sfPro.variable} ${sfProText.variable} font-sans antialiased`}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(
+        'min-h-screen bg-white dark:bg-apple-darker font-sans antialiased',
+        sfPro.variable
+      )}>
+        <ThemeProvider>
+          <Header />
+          <main>
+            {children}
+          </main>
+          {/* You can add Footer here later */}
+        </ThemeProvider>
       </body>
     </html>
   )
