@@ -8,13 +8,12 @@ import { cn } from '@/lib/utils';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'ghost' | 'link';
   size?: 'default' | 'sm' | 'lg';
-  asChild?: boolean;
   href?: string;
   chevron?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'default', asChild = false, href, chevron = false, children, ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'default', href, chevron = false, children, ...props }, ref) => {
     const styles = cn(
       'inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50',
       {
@@ -42,7 +41,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         <path d="M0.538574 1.26953L5.26776 6.00098L0.538574 10.7324" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
     );
-    
+
     // Jika href disediakan, gunakan Link
     if (href) {
       return (
@@ -52,10 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         </Link>
       );
     }
-    
-    // Sepenuhnya menghapus logika asChild karena menyebabkan error typing
-    // Sebagai gantinya kita hanya menggunakan button reguler
-    
+
     // Kasus default - render sebagai button dengan ref
     return (
       <button ref={ref} className={styles} {...props}>
