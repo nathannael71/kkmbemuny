@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 // src/components/ui/Button.tsx
 import React from 'react';
