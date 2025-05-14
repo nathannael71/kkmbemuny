@@ -7,22 +7,22 @@ import type { Metadata } from 'next'
 const sfPro = localFont({
   src: [
     {
-      path: '../../public/fonts/SF-Pro-Display-Regular.woff2',
+      path: '../../public/fonts/SF-Pro-Display-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/SF-Pro-Display-Medium.woff2',
+      path: '../../public/fonts/SF-Pro-Display-Medium.otf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/SF-Pro-Display-Semibold.woff2',
+      path: '../../public/fonts/SF-Pro-Display-Semibold.otf',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/SF-Pro-Display-Bold.woff2',
+      path: '../../public/fonts/SF-Pro-Display-Bold.otf',
       weight: '700',
       style: 'normal',
     },
@@ -35,17 +35,17 @@ const sfPro = localFont({
 const sfProText = localFont({
   src: [
     {
-      path: '../../public/fonts/SF-Pro-Text-Regular.woff2',
+      path: '../../public/fonts/SF-Pro-Text-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/SF-Pro-Text-Medium.woff2',
+      path: '../../public/fonts/SF-Pro-Text-Medium.otf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/SF-Pro-Text-Semibold.woff2',
+      path: '../../public/fonts/SF-Pro-Text-Semibold.otf',
       weight: '600',
       style: 'normal',
     },
@@ -55,8 +55,8 @@ const sfProText = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Apple Clone - Next.js',
-  description: 'Apple website clone built with Next.js',
+  title: 'KKM BEM KM UNY - Next.js',
+  description: 'Departemen Karir dan Karya Mahasiswa',
 }
 
 export default function RootLayout({
