@@ -1,7 +1,6 @@
 // src/app/page.tsx
 import { Header } from '@/components/header/Header';
 import { HeroSection } from '@/components/section/HeroSection';
-import { GridSection } from '@/components/section/GridSection';
 import { Card } from '@/components/ui/Card';
 import { Section } from '@/components/section/Section';
 import { Button } from '@/components/ui/Button';
