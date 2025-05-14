@@ -1,16 +1,80 @@
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 29, 29, 31;
   --background-rgb: 255, 255, 255;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-family: var(--font-sf-pro-text), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.015em;
+}
+
+/* Apple specific typographic styles */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  
+  h1 {
+    @apply text-[40px] md:text-[56px] leading-[1.07] font-bold tracking-[-0.005em];
+  }
+  
+  h2 {
+    @apply text-[32px] md:text-[48px] leading-[1.1] font-semibold tracking-[-0.003em];
+  }
+  
+  h3 {
+    @apply text-[28px] md:text-[40px] leading-[1.14] font-semibold tracking-[-0.002em];
+  }
+  
+  h4 {
+    @apply text-[24px] md:text-[32px] leading-[1.16] font-semibold;
+  }
+  
+  p {
+    @apply text-[17px] leading-[1.47059];
+  }
+  
+  .text-sm {
+    @apply text-[14px] leading-[1.42859];
+  }
+  
+  .text-xs {
+    @apply text-[12px] leading-[1.33337];
+  }
+  
+  .eyebrow {
+    @apply text-[19px] md:text-[21px] font-semibold leading-[1.2] tracking-[.012em];
+  }
+  
+  .headline {
+    @apply text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-[-0.015em];
+  }
+  
+  .subhead {
+    @apply text-[21px] md:text-[28px] leading-[1.2857] font-semibold;
+  }
+}
+
+/* Apple UI specific components */
+@layer components {
+  .apple-button {
+    @apply inline-flex items-center justify-center rounded-full bg-[#0071e3] text-white font-medium px-[22px] py-[8px] text-[17px] hover:bg-[#0077ED] transition-colors;
+  }
+  
+  .apple-link {
+    @apply text-[#0066cc] hover:underline;
+  }
+  
+  .apple-nav-link {
+    @apply text-xs font-normal text-[#1d1d1f] opacity-80 hover:opacity-100;
+  }
 }
