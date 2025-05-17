@@ -8,7 +8,7 @@ import NavLink from './NavLink';
 import SearchBar from '@/components/ui/SearchBar';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import LanguageToggle from '@/components/ui/LanguageToggle';
-import { Language, loadLanguage, saveLanguage, translate } from '@/lib/language';
+import { Language, loadLanguage, translate } from '@/lib/language';
 import { initTheme } from '@/lib/theme';
 
 export default function Navbar({ logo, links, translations }: NavbarProps) {
