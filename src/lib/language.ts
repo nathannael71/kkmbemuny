@@ -13,7 +13,7 @@ export const loadLanguage = (): Language => {
     const savedLanguage = localStorage.getItem('language');
     
     if (savedLanguage === 'en' || savedLanguage === 'id') {
-      return savedLanguage;
+      return savedLanguage as Language;
     }
     
     // Default based on browser language
