@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar/Navbar';
 
-const inter = Inter({ subsets: ['latin'] });
+export const metadata: Metadata = {
+  title: 'My Website',
+  description: 'Website with Apple-inspired navbar',
+};
 
 // Navbar configuration
 const navbarProps = {
@@ -44,11 +46,6 @@ const navbarProps = {
   }
 };
 
-export const metadata: Metadata = {
-  title: 'Your Website',
-  description: 'Your website description',
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -56,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased min-h-screen bg-white dark:bg-black text-black dark:text-white`}>
+      <body className="antialiased min-h-screen">
         <Navbar {...navbarProps} />
         <div className="pt-16">
           {children}
