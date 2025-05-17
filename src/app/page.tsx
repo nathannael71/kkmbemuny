@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -9,7 +8,7 @@ export default function Home() {
         
         <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md">
           <p className="text-lg mb-4">
-            This is the homepage of my website. I'm using Next.js 15.3.2 with a custom navbar 
+            This is the homepage of my website. I&apos;m using Next.js 15.3.2 with a custom navbar 
             inspired by Apple.com.
           </p>
           
