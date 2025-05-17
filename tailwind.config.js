@@ -9,9 +9,11 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ['SF Pro Display', 'SF Pro Text', 'SF Pro', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        'apple-blue': '#0071e3',
       },
     },
   },
