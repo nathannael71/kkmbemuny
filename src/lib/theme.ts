@@ -19,7 +19,7 @@ export const loadTheme = (): Theme => {
     const savedTheme = localStorage.getItem('theme');
     
     if (savedTheme === 'dark' || savedTheme === 'light') {
-      return savedTheme;
+      return savedTheme as Theme;
     }
     
     // Check system preference
