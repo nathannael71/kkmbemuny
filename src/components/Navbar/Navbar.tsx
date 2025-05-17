@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { NavbarProps } from '@/types/navbar';
 import NavLink from './NavLink';
 import { Theme, loadTheme, saveTheme, initTheme } from '@/lib/theme';
@@ -83,7 +84,7 @@ export default function Navbar({ logo, links, translations }: NavbarProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo - Left side */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 src={logo.src}
                 alt={logo.alt}
@@ -91,7 +92,7 @@ export default function Navbar({ logo, links, translations }: NavbarProps) {
                 height={30}
                 className="transition-opacity hover:opacity-80"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation - Center */}
@@ -189,13 +190,13 @@ export default function Navbar({ logo, links, translations }: NavbarProps) {
           
           {/* Mobile Nav Links */}
           {links.map((link) => (
-            <a
+            <Link
               key={link.id}
               href={link.href}
               className="block py-2.5 px-3 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               {translate(link.label, translations, language)}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
